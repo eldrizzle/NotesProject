@@ -461,10 +461,11 @@ border-radius: 20px;
   }
 
   .section-quora-left-item{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
 
   .top{
@@ -490,6 +491,65 @@ padding: 0 11rem;
 color: #74757E;
 
   }
+
+  .answer-share-delete img , .view-edit-report img{
+    height: 4.9rem;
+    width: 5rem;
+
+  }
+
+  .answer-share-delete , .view-edit-report{
+    /* border: 2px solid red; */
+    
+  }
+
+  .view-edit-report{
+    padding-left: 12.5rem;
+
+  }
+  .icons{
+    display: flex;
+    position: absolute;
+    left: 10rem;
+
+
+    /* grid-template-columns: 1fr 1fr; */
+    /* border: 2px solid purple; */
+  }
+ .answer , .share , .delete{
+  display: flex;
+  flex-direction: row;
+  /* border: 2px solid red; */
+  align-items: center;
+  
+  margin: 15px 0px;
+  
+  
+
+  /* justify-content: center; */
+ }
+
+ .view , .edit , .report{
+  display: flex;
+  flex-direction: row;
+  /* border: 2px solid red; */
+  align-items: center;
+  margin: 15px 0px;
+
+  /* justify-content: center; */
+ }
+ .answertxt , .sharetxt , .deletetxt ,.viewtxt , .edittxt , .reporttxt{
+   padding: 0px 1.8rem;
+   font-family: 'Libre Franklin';
+font-style: normal;
+font-weight: 700;
+font-size: 21px;
+line-height: 25px;
+
+color: #000000;
+ }
+
+
   .section-quora-right{
 
     height: 100%;
