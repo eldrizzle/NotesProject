@@ -498,7 +498,7 @@ color: #74757E;
 
   }
 
-  .answer-share-delete , .view-edit-report{
+  .answer-share-delete , .view-edit-report {
     /* border: 2px solid red; */
     
   }
@@ -583,7 +583,7 @@ height: 645px;
 /* ========================================  --> */
 
 .section-learn {
-    background: #FAF5F5;
+    background: #fff;
     height: 28rem;
     display: flex;
     align-items: center;
