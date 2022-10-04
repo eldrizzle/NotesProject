@@ -1,0 +1,487 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:wght@400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+
+/* .right.carousel-control, .left.carousel-control {
+  display: none;
+} */
+
+html {
+  font-size: 62.5%;
+  /* 1rem = 10px */
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.header {
+  padding: 0 4.8rem;
+  height: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #027990;
+  /* position: fixed;
+  overflow: hidden; */
+}
+
+.header .logo {
+  height: 3rem;
+}
+
+.logopart{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.logonotes , .logokart{
+    font-size: 3rem;
+    font-weight: 500;
+    font-family: 'Poppins', 'Times New Roman', Times, serif;
+    
+}
+
+.logonotes{
+    color: #E59245;
+}
+
+.navbar-list {
+  display: flex;
+  gap: 4.8rem;
+  list-style: none;
+}
+
+.navbar-link:link,
+.navbar-link:visited {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #212529;
+  transition: all 0.3s;
+}
+
+.navbar-link:hover,
+.navbar-link:active {
+  color: #ffffff;
+}
+
+.mobile-navbar-btn {
+  display: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.mobile-nav-icon {
+  width: 4rem;
+  height: 4rem;
+  color: #212529;
+}
+
+.mobile-nav-icon[name="close-outline"] {
+  display: none;
+}
+
+/* ===========================================
+Hero  Section Start
+======================================= */
+.section-hero{padding: 9.6rem 0;
+  background-color: #027990;
+  height: 54rem;
+  /* border: 2px solid red; */
+
+  display: flex;
+  /* display: grid;
+  grid-template-columns: repeat(2 , 1fr); */
+  justify-content: center;
+  align-items: center; 
+  flex-direction: row;
+
+  justify-content: space-between;
+}
+
+.hero-main{
+ 
+  /* border: 2px solid rgb(0, 34, 255); */
+  /* height:500px; */
+  width: 500px;
+
+  
+}
+
+.carousel-item img{
+  height: 54rem ;
+  
+  
+
+
+}
+
+
+.carousel-item{
+  display: inline-block;
+}
+
+
+
+
+ .headingtext{
+  
+  /* font-family: 'Reem Kufi Fun', sans-serif; */
+  font-size: 1.8rem;
+  
+
+
+}
+.hero-main-left h1{
+  font-family: 'Reem Kufi Fun', sans-serif;
+  font-size: 4.8rem;
+  
+}
+
+
+
+.hero-main-left h1 .exp{
+  color: #DC9E1C;
+}
+
+
+.headclubbed{
+  padding: 10rem;
+  position: absolute;
+  top: 4rem;
+}
+
+.hero-main-left{
+  
+  font-family: 'Reem Kufi Fun', sans-serif;
+  /* align-self: flex-start; */
+  height: 54rem;
+  width: 77rem;
+  align-items: center;
+  display: flex;
+  position: relative;
+
+}
+.hero-main-right{
+  /* border: 2px solid red; */
+  /* align-self: flex-end; */
+  height: 54rem;
+  width: 69rem;
+  margin-bottom: 8.5rem;
+  margin-right: 5rem;
+
+  
+}
+
+
+
+
+/* ===========================================
+ Service Section Start
+======================================= */
+
+.section-services {
+  background: #EFF9FD;
+  height: 47rem;
+}
+
+
+.section-services p {
+  font-size: 3.2rem;
+}
+
+.hero h1{
+  font-family: 'Teko', sans-serif;
+  font-size: 4.8rem;
+  letter-spacing: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 16px;
+
+
+}
+
+
+.departments{
+  display: flex;
+  /* display: grid; */
+  justify-content: space-around;
+ 
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 5rem;
+  
+  
+}
+
+/* .department-elements, .departments{
+  border: 2px solid red;
+} */
+.department-elements{
+  height: 24rem;
+  width: 27.5rem;
+  background: #FFFFFF;
+mix-blend-mode: normal;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+border-radius: 40px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+  
+}
+
+/* ***********Targetting services section branch wise image and its text **** */
+
+.department-elements .img{
+   height: 11rem;
+   width: 11rem;
+
+}
+
+.department-elements .department-heading{
+  font-size: 3.4rem;
+  font-family: 'Oregano', cursive;
+
+}
+
+
+
+
+/* <!--========================================  */
+/* Our feature Section Start   */
+/* ========================================  --> */
+
+.section-features {
+    background: #BADEFF;
+    height: 58rem;
+  }
+  
+  
+  .section-features p {
+    font-size: 3.2rem;
+  }
+
+
+  /* <!--========================================  */
+/* Our coruses Section Start   */
+/* ========================================  --> */
+
+.section-courses {
+    background: #FFF9F9;
+    height: 110rem;
+  }
+  
+  
+  .section-courses p {
+    font-size: 3.2rem;
+  }
+
+    /* <!--========================================  */
+/* Our Quora Section Start   */
+/* ========================================  --> */
+
+.section-quora {
+    background: #77BDDF;
+    height: 100vh;
+  }
+  
+  
+  .section-quora p {
+    font-size: 3.2rem;
+  }
+
+
+     /* <!--========================================  */
+/* Our learn Section Start   */
+/* ========================================  --> */
+
+.section-learn {
+    background: #FAF5F5;
+    height: 28rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .section-learn .hero h1{
+    font-size: 4.5rem;
+    font-family: 'Itim', cursive;
+  }
+
+
+     /* <!--========================================  */
+/* Our slider Section Start   */
+/* ========================================  --> */
+
+.section-slider {
+  
+    height: 34rem;
+  }
+
+  
+  
+  
+  .section-slider p {
+    font-size: 3.2rem;
+  } 
+
+  .container1{
+    height: 350px;
+    /* margin: auto; */
+    position: relative;
+    /* width: 90%; */
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.slide-container{
+    display: flex;
+    width: calc(250px* 18);
+    animation: scroll 20s linear infinite;
+
+}
+
+@keyframes scroll {
+    0%{
+        transform: translateX(0);
+    }
+
+    100%{
+        transform: translateX(calc(-250px *9));
+    }
+    
+}
+
+
+.slide-image{
+    /* height: 550px;
+    width: 250px;  */
+    display: flex;
+    align-items: center;
+    /* padding: 0px; */
+    /* margin-left: 0px; */
+    /* border: 2px solid red; */
+
+    /* perspective: 100px; */
+}
+
+img{
+    width: 100%;
+    transition: transform 1s;
+}
+
+img :hover{
+    transform: translateZ(50px);
+}
+
+
+     /* <!--========================================  */
+/* Our footer Section Start   */
+/* ========================================  --> */
+
+.section-footer {
+    background: #29323F;
+    height: 30rem;
+  }
+  
+  
+  .section-footer p {
+    font-size: 3.2rem;
+  }
+
+
+
+/* ===========================================
+Responsive Codes 
+======================================= */
+
+/* 980px  */
+@media (max-width: 62em) {
+  .mobile-navbar-btn {
+    display: block;
+    z-index: 999;
+    border: 3px solid #212529;
+    color: #212529;
+  }
+
+  .header {
+    position: relative;
+  }
+
+  .header .logo {
+    width: 40%;
+  }
+
+  .navbar {
+    /* display: none; */
+    width: 100%;
+    height: 100vh;
+    background: #e7f5ff;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* to get the tranisition  */
+    transform: translateX(100%);
+    transition: all 0.5s linear;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .navbar-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .active .navbar {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .active .mobile-navbar-btn .mobile-nav-icon[name="close-outline"] {
+    display: block;
+  }
+
+  .active .mobile-navbar-btn .mobile-nav-icon[name="menu-outline"] {
+    display: none;
+  }
+}
+
+/* Below 560px  */
+@media (max-width: 35em) {
+  .header {
+    padding: 0 2.4rem;
+  }
+
+  .header .logo {
+    width: 60%;
+  }
+}
