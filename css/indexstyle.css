@@ -60,6 +60,8 @@ body {
   display: flex;
   gap: 4.8rem;
   list-style: none;
+  transition: all 1s;
+  
 }
 
 .navbar-link:link,
@@ -77,6 +79,7 @@ body {
 .navbar-link:hover,
 .navbar-link:active {
   color: #ffffff;
+  transition: all 1s;
 }
 
 .mobile-navbar-btn {
@@ -163,8 +166,16 @@ Hero  Section Start
   padding: 10rem;
   position: absolute;
   top: 4rem;
+  
 }
 
+.quote-top h1{
+  display: inline-block;
+}
+
+.quote-botom h2{
+  display: inline-block;
+}
 .hero-main-left{
   
   font-family: 'Reem Kufi Fun', sans-serif;
@@ -187,6 +198,32 @@ Hero  Section Start
   
 }
 
+.quote-top{
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  animation: typing 1.5s steps(20, end) forwards, blinking .8s infinite;
+  /* font-size: 1.6rem; */
+  width: 0;
+}
+
+.quote-bottom{
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  animation: typing 1.5s steps(20, end) forwards, blinking .8s infinite;
+  /* font-size: 1.6rem; */
+  width: 0;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blinking {
+  from { border-color: transparent }
+  to { border-color: orange; }
+}
 
 
 
