@@ -213,7 +213,7 @@ h1 .type{
   overflow: hidden;
   /* border-right: .15em solid orange; */
   white-space: nowrap;
-  animation: typing 1.5s steps(20, end) forwards;
+  animation: typing 0.8s steps(20, end) forwards,blink .8s linear;
   /* font-size: 1.6rem; */
   width: 0;
 }
@@ -222,8 +222,8 @@ h1 .type2{
    overflow: hidden;
   border-right: .15em solid orange;
   white-space: nowrap;
-  animation: typing 1.5s steps(20, end) forwards, blink .8s infinite;
-  animation-delay: 1.5s;
+  animation: typing 0.8s steps(20, end) forwards, blinking .8s infinite;
+  animation-delay: 0.8s;
   /* font-size: 1.6rem; */
   width: 0;
 }
@@ -240,8 +240,10 @@ h1 .type2{
 }
 
 @keyframes blink {
-  0% { border-color: transparent }
-  100% { border-color: orange; }
+  0% { border-color: transparent ;}
+  80% { border-color: orange; }
+  1000% { border-color: transparent }
+
 }
 
 
@@ -446,13 +448,21 @@ box-shadow: 0px 4px 10px rgba(26, 24, 24, 0.7);
 /* ========================================  --> */
 
 .section-course {
-    background: #FFF9F9;
+  background: rgb(234, 234, 228);
+    
+
     height: 110rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
   }
+.section-course:hover{
+  
+  background: #FFF9F9;
+  transition: all 0.3s;
 
+
+}
   .section-course-heading{
     font-family: 'Reem Kufi Fun', sans-serif;
     font-style: normal;
