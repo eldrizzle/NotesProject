@@ -43,6 +43,11 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    transition: transform .7s ease-in-out;
+    transition: 0.5s all;
+}
+.logopart img:hover{
+  transform: rotatey(360deg);
 }
 
 .logonotes , .logokart{
@@ -344,7 +349,11 @@ box-shadow: 0px 4px 10px rgba(26, 24, 24, 0.7);
 /* .section-features-right-elements , .section-features-left-top , .section-features-left-bottom , .section-features-left , .section-features-right , .section-features{
   border: 2px solid red;
 } */
+.section-features{
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 
+}
 .section-features-left{
   display: grid;
   grid-template-rows: 2fr 1fr;
