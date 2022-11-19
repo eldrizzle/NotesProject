@@ -1,0 +1,1044 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:wght@400;500;600;700&display=swap");
+
+* {
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+
+/* .right.carousel-control, .left.carousel-control {
+  display: none;
+} */
+
+html {
+  font-size: 62.5%;
+  /* 1rem = 10px */
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.header {
+  padding: 0 4.8rem;
+  height: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #027990;
+  /* position: fixed;
+  overflow: hidden; */
+}
+
+.header .logo {
+  height: 3rem;
+}
+
+.logopart{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    transition: transform .7s ease-in-out;
+    transition: 0.5s all;
+}
+.logopart img:hover{
+  transform: rotatey(360deg);
+}
+
+.logonotes , .logokart{
+    font-size: 3rem;
+    font-weight: 500;
+    font-family: 'Poppins', 'Times New Roman', Times, serif;
+    
+}
+
+.logonotes{
+    color: #E59245;
+}
+
+.navbar-list {
+  display: flex;
+  gap: 4.8rem;
+  list-style: none;
+  transition: all 1s;
+  
+}
+
+.navbar-link:link,
+.navbar-link:visited {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #212529;
+  transition: all 0.3s;
+}
+
+.navbar-link:hover,
+.navbar-link:active {
+  color: #ffffff;
+  transition: all 1s;
+}
+
+.mobile-navbar-btn {
+  display: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.mobile-nav-icon {
+  width: 4rem;
+  height: 4rem;
+  color: #212529;
+}
+
+.mobile-nav-icon[name="close-outline"] {
+  display: none;
+}
+
+/* ===========================================
+Hero  Section Start
+======================================= */
+.section-hero{padding: 9.6rem 0;
+  background-color: #027990;
+  height: 54rem;
+  /* border: 2px solid red; */
+
+  display: flex;
+  /* display: grid;
+  grid-template-columns: repeat(2 , 1fr); */
+  justify-content: center;
+  align-items: center; 
+  flex-direction: row;
+
+  justify-content: space-between;
+}
+
+.hero-main{
+ 
+  /* border: 2px solid rgb(0, 34, 255); */
+  /* height:500px; */
+  width: 500px;
+
+  
+}
+
+.carousel-item img{
+  height: 54rem ;
+  
+  
+
+
+}
+
+
+.carousel-item{
+  display: inline-block;
+}
+
+
+
+
+ .headingtext{
+  
+  /* font-family: 'Reem Kufi Fun', sans-serif; */
+  font-size: 1.8rem;
+  
+
+
+}
+.hero-main-left h1{
+  font-family: 'Reem Kufi Fun', sans-serif;
+  font-size: 4.8rem;
+  
+}
+
+
+
+.hero-main-left h1 .exp{
+  color: #DC9E1C;
+}
+
+
+.headclubbed{
+  padding: 10vh;
+  position: absolute;
+  top: 4rem;
+  
+}
+
+.quote-top h1{
+  display: inline-block;
+}
+
+.quote-botom h2{
+  display: inline-block;
+}
+.hero-main-left{
+  
+  font-family: 'Reem Kufi Fun', sans-serif;
+  /* align-self: flex-start; */
+  height: 54rem;
+  width: 77rem;
+  align-items: center;
+  display: flex;
+  position: relative;
+
+}
+.hero-main-right{
+  /* border: 2px solid red; */
+  /* align-self: flex-end; */
+  height: 54rem;
+  width: 69rem;
+  margin-bottom: 8.5rem;
+  margin-right: 5rem;
+
+  
+}
+
+.quote-top{
+  display: inline-block;
+
+}
+
+.quote-bottom{
+
+  display: inline-block;
+
+}
+
+h1 .type{
+  overflow: hidden;
+  /* border-right: .15em solid orange; */
+  white-space: nowrap;
+  animation: typing 0.8s steps(20, end) forwards,blink .8s linear;
+  /* font-size: 1.6rem; */
+  width: 0;
+}
+
+h1 .type2{
+   overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  animation: typing 0.8s steps(20, end) forwards, blinking .8s infinite;
+  animation-delay: 0.8s;
+  /* font-size: 1.6rem; */
+  width: 0;
+}
+
+
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blinking {
+  from { border-color: transparent }
+  to { border-color: orange; }
+}
+
+@keyframes blink {
+  0% { border-color: transparent ;}
+  80% { border-color: orange; }
+  1000% { border-color: transparent }
+
+}
+
+
+
+/* ===========================================
+ Service Section Start
+======================================= */
+
+.section-services {
+  background: #EFF9FD;
+  height: 47rem;
+}
+
+.departments{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  
+  margin-top: 5rem;
+  
+  
+}
+/* .drow1 ,.drow2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+} */
+.department-elements{
+  height: 24rem;
+  width: 27.5rem;
+  /* flex: 0 0 18%; */
+  background: #FFFFFF;
+mix-blend-mode: normal;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+border-radius: 34px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+transition: all ease-in-out 0.6s; 
+
+
+  
+}
+
+.section-services p {
+  font-size: 3.2rem;
+}
+
+.hero h1{
+  font-family: 'Teko', sans-serif;
+  font-size: 4.8rem;
+  letter-spacing: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 16px;
+
+
+}
+
+
+
+
+/* .department-elements, .departments{
+  border: 2px solid red;
+} */
+
+
+/* ***********Targetting services section branch wise image and its text **** */
+
+.department-elements .img{
+   height: 11rem;
+   width: 11rem;
+
+}
+
+.department-elements .department-heading{
+  font-size: 3.4rem;
+  font-family: 'Teko', cursive;
+
+}
+
+/* ===========================================
+ Service Section resposive design Start
+======================================= */
+
+@media (max-width: 90em) {
+
+  .department-elements{
+
+    height: 22rem;
+    width: 24rem;
+}
+
+}
+
+@media (max-width: 79em) {
+
+  .department-elements{
+
+    height: 20rem;
+    width: 22rem;
+}
+
+}
+
+@media (max-width: 66.25em) {
+
+  .department-elements .img{
+    height: 9rem;
+    width: 9rem;
+ 
+ }
+
+}
+
+@media (max-width: 61.75em) {
+
+  .department-elements{
+  
+    flex: 0 0 2;
+  }
+}
+
+
+
+
+/* <!--========================================  */
+/* Our animation for service section - Start   */
+/* ========================================  --> */
+.department-elements:hover{
+  /* translate: 0 -15px 0px;
+  /* transition: all ease-in 0.6s; */ 
+  transform: translateY(-20px);
+  transition: all ease-in-out 0.6s; 
+  background: #f3f5ff;
+box-shadow: 0px 4px 10px rgba(26, 24, 24, 0.7);
+  
+  border-radius: 28px;
+  
+}
+
+
+/* <!--========================================  */
+/* Our feature Section Start   */
+/* ========================================  --> */
+
+/* .section-features-right-elements , .section-features-left-top , .section-features-left-bottom , .section-features-left , .section-features-right , .section-features{
+  border: 2px solid red;
+} */
+.section-features{
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+}
+.section-features-left{
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+
+}
+
+.section-features-right{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+
+
+
+}
+
+.section-features-left-bottom{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 10rem;
+
+}
+
+.section-features-left-top{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+}
+
+.section-features-left-top img{
+  position: absolute;
+  top: 4rem;
+  left: 10rem;
+  width: 54rem;
+  height: 36rem;
+  
+ 
+  
+  background: #000000;
+  /* opacity: 0.1; */
+  backdrop-filter: blur(2px);
+  /* Note: backdrop-filter has minimal browser support */
+  
+  border-radius: 6px;
+  
+}
+
+.section-features-left-bottom h2{
+
+  font-family: 'Inter', sans-serif;
+}
+
+
+
+
+
+
+.section-features-right-elements{
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     /* justify-content: center; */
+}
+
+.section-features-right-elements{
+
+}
+
+.section-features-right-elements-logo{
+  padding: 0px 15px;
+}
+
+.section-features-right-elements-txt h2{
+  font-family: 'Inter', sans-serif;
+
+}
+
+.section-features-right-elements-txt  div , .section-features-left-bottom div{
+  font-size: 1.35rem;
+  
+}
+
+.section-features {
+    background: #BADEFF;
+    height: 58rem;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+
+
+  }
+  
+  
+  .section-features p {
+    font-size: 3.2rem;
+  }
+
+
+  /* <!--========================================  */
+/* Our coruses Section Start   */
+/* ========================================  --> */
+
+.section-course {
+  background: rgb(234, 234, 228);
+    
+
+    height: 104rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+.section-course:hover{
+  
+  background: #FFF9F9;
+  transition: all 0.3s;
+
+
+}
+  .section-course-heading{
+    font-family: 'Reem Kufi Fun', sans-serif;
+    font-style: normal;
+    font-weight: 350;
+    font-size: 5.5rem;
+    line-height: 3rem;
+    /* or 52% */
+    
+    text-align: center;
+    
+    color: #000000;
+  }
+ 
+  .course-heading{
+    font-size: 2rem;
+    padding-top: 1rem;
+  }
+  .course{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+  }
+
+  .course-elements{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid purple; */
+    width: 30rem;
+    height: 32rem;
+    align-items: center;
+    justify-content: center;
+    -webkit-transition:  box-shadow .6s ease-out;
+
+
+    background: rgba(212, 242, 244, 0.5);
+mix-blend-mode: normal;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+
+  }
+
+
+  .course-elements:hover{ 
+    box-shadow: 1px 8px 20px grey;
+   -webkit-transition:  box-shadow .6s ease-in;
+    color: rgb(7, 7, 7);
+    font-weight: 500;
+ }
+
+  
+  
+  .section-courses p {
+    font-size: 3.2rem;
+  }
+
+      /* <!--========================================  */
+/* Our courses  Section responsive Start   */
+/* ========================================  --> */
+
+@media (max-width: 90em) {
+  .course-elements{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid purple; */
+    width: 28rem;
+    height: 30rem;
+  }
+
+
+}
+
+
+@media (max-width: 76.25em) {
+  .course-elements{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid purple; */
+    width: 25rem;
+    height: 27rem;
+  }
+
+
+}
+
+    /* <!--========================================  */
+/* Our Quora Section Start   */
+/* ========================================  --> */
+
+.section-quora {
+    background: #77BDDF;
+    height: 80rem;
+    display: flex;
+    flex-direction: row;
+    /* position: relative; */
+    /* flex-wrap: wrap-reverse; */
+    
+  }
+
+  .section-quora-left , .section-quora-right{
+    /* border: 2px solid rgb(231, 0, 0); */
+  }
+
+  .section-quora-left{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 2fr 2fr;
+   
+
+
+
+  }
+
+  .section-quora-left-item{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .top{
+    font-family: 'Libre Franklin';
+font-style: normal;
+font-weight: 700;
+font-size: 33px;
+line-height: 40px;
+
+color: #000000;
+  }
+
+  .middle{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 33px;
+padding: 0 11rem;
+/* or 183% */
+
+
+color: #74757E;
+
+  }
+
+  .answer-share-delete img , .view-edit-report img{
+    height: 4.9rem;
+    width: 5rem;
+
+  }
+
+  .answer-share-delete , .view-edit-report {
+    /* border: 2px solid red; */
+    
+  }
+
+  .view-edit-report{
+    padding-left: 12.5rem;
+
+  }
+  .icons{
+    display: flex;
+    position: absolute;
+    left: 10rem;
+
+
+    /* grid-template-columns: 1fr 1fr; */
+    /* border: 2px solid purple; */
+  }
+ .answer , .share , .delete{
+  display: flex;
+  flex-direction: row;
+  /* border: 2px solid red; */
+  align-items: center;
+  
+  margin: 15px 0px;
+  
+  
+
+  /* justify-content: center; */
+ }
+
+ .view , .edit , .report{
+  display: flex;
+  flex-direction: row;
+  /* border: 2px solid red; */
+  align-items: center;
+  margin: 15px 0px;
+
+  /* justify-content: center; */
+ }
+ .answertxt , .sharetxt , .deletetxt ,.viewtxt , .edittxt , .reporttxt{
+   padding: 0px 1.8rem;
+   font-family: 'Libre Franklin';
+font-style: normal;
+font-weight: 700;
+font-size: 21px;
+line-height: 25px;
+
+color: #000000;
+ }
+
+
+  .section-quora-right{
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    
+   
+
+  }
+
+  .section-quora-right img{
+    /* position: absolute; */
+width: 526px;
+height: 645px;
+
+
+  }
+
+
+  
+  
+  .section-quora p {
+    font-size: 3.2rem;
+  }
+
+
+     /* <!--========================================  */
+/* Our learn Section Start   */
+/* ========================================  --> */
+
+.section-learn {
+    background: #fff;
+    height: 28rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .section-learn .hero h1{
+    font-size: 4.5rem;
+    font-family: 'Reem Kufi Fun', sans-serif;
+  }
+
+
+     /* <!--========================================  */
+/* Our slider Section Start   */
+/* ========================================  --> */
+
+.section-slider {
+  
+    height: 34rem;
+  }
+
+  
+  
+  
+  .section-slider p {
+    font-size: 3.2rem;
+  } 
+
+  .container1{
+    height: 350px;
+    /* margin: auto; */
+    position: relative;
+    /* width: 90%; */
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.slide-container{
+    display: flex;
+    width: calc(250px* 18);
+    animation: scroll 20s linear infinite;
+
+}
+
+@keyframes scroll {
+    0%{
+        transform: translateX(0);
+    }
+
+    100%{
+        transform: translateX(calc(-250px *9));
+    }
+    
+}
+
+
+.slide-image{
+    /* height: 550px;
+    width: 250px;  */
+    display: flex;
+    align-items: center;
+    /* padding: 0px; */
+    /* margin-left: 0px; */
+    /* border: 2px solid red; */
+
+    /* perspective: 100px; */
+}
+
+
+
+img{
+    width: 100%;
+    transition: transform 1s;
+}
+
+img :hover{
+    transform: translateZ(50px);
+}
+
+
+     /* <!--========================================  */
+/* Our footer Section Start   */
+/* ========================================  --> */
+
+.section-footer {
+    background: #29323F;
+    height: 30rem;
+    display: grid;
+    /* flex-direction: column; */
+    grid-template-rows: 5.5fr 1fr;
+
+  }
+  
+  .section-footer-elements{
+    /* border: 2px solid red; */
+    width: 100%;
+
+  }
+
+  .section-footer-up{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+
+  }
+  .section-footer-up:first-child{
+    
+  }
+
+  .section-footer-up-elements{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+
+    
+  }
+
+
+  
+  .section-footer p {
+    font-size: 3.2rem;
+  }
+
+  .footerlongtxt{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 33px;
+/* or 183% */
+
+text-transform: capitalize;
+
+color: #74757E;
+
+  }
+
+
+  .footersocial{
+    display: flex;
+    flex-direction: row ;
+  }
+  .footersocial img{
+    width: 32px;
+height: 28px;
+  }
+
+  .followus{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 32px;
+/* identical to box height, or 200% */
+
+text-transform: capitalize;
+
+color: #FFFFFF;
+  }
+
+  .footersocial , .footerlongtxt , .footerlogonoteskart{
+       margin: 10px 10px;
+  }
+
+  .section-footer-down{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+
+  .section-footer-down img{
+    width: 270px;
+    height: 26px;
+  }
+  
+  .footernavigation{
+    /* border: 2px solid red; */
+    
+
+  }
+
+  ul{
+    
+    list-style: none;
+  }
+  ul li a{
+    text-decoration: none;
+    color: White;
+
+  }
+
+  #footernavigation{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+
+  }
+
+/* ===========================================
+Responsive Codes 
+======================================= */
+
+/* 980px  */
+@media (max-width: 62em) {
+  .mobile-navbar-btn {
+    display: block;
+    z-index: 999;
+    border: 3px solid #212529;
+    color: #212529;
+  }
+
+  .header {
+    position: relative;
+  }
+
+  .header .logo {
+    width: 40%;
+  }
+
+  .navbar {
+    /* display: none; */
+    width: 100%;
+    height: 100vh;
+    background: #e7f5ff;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* to get the tranisition  */
+    transform: translateX(100%);
+    transition: all 0.5s linear;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .navbar-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .active .navbar {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .active .mobile-navbar-btn .mobile-nav-icon[name="close-outline"] {
+    display: block;
+  }
+
+  .active .mobile-navbar-btn .mobile-nav-icon[name="menu-outline"] {
+    display: none;
+  }
+}
+
+/* Below 560px  */
+@media (max-width: 35em) {
+  .header {
+    padding: 0 2.4rem;
+  }
+
+  .header .logo {
+    width: 60%;
+  }
+}
+
+
