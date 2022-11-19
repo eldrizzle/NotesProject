@@ -6,11 +6,15 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Work Sans", sans-serif;
+  
 }
+
 
 /* .right.carousel-control, .left.carousel-control {
   display: none;
 } */
+
+
 
 html {
   font-size: 62.5%;

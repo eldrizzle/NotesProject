@@ -17,6 +17,37 @@ app.get("/", function(req, res){
     res.render("main")
 })
 
+app.get('/web', function(req, res, next) {
+    res.render("courses/web");
+ });
+
+
+ app.get('/app', function(req, res, next) {
+    res.render("courses/app");
+ });
+
+
+ app.get('/graphic', function(req, res, next) {
+    res.render("courses/graphic");
+ });
+
+
+ app.get('/ml', function(req, res, next) {
+    res.render("courses/ml");
+ });
+
+
+ app.get('/cyber', function(req, res, next) {
+    res.render("courses/cyber");
+ });
+
+
+ app.get('/cpp', function(req, res, next) {
+    res.render("courses/cpp");
+ });
+
+
+
 
 app.listen(3000 , function(){
     console.log("Server started at port no 3000");
