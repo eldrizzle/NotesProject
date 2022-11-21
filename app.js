@@ -46,6 +46,34 @@ app.get('/web', function(req, res, next) {
     res.render("courses/cpp");
  });
 
+ 
+ app.get('/cse', function(req, res, next) {
+   res.render("stream/cse");
+});
+
+app.get('/it', function(req, res, next) {
+   res.render("stream/it");
+});
+app.get('/aero', function(req, res, next) {
+   res.render("stream/aero");
+});
+app.get('/chemical', function(req, res, next) {
+   res.render("stream/chemical");
+});
+
+app.get('/mechanical', function(req, res, next) {
+   res.render("stream/mechanical");
+});
+
+
+
+
+
+
+// pdf
+app.get('/cse/unit-1/pdf1', function(req, res, next) {
+   res.render("public/pdfs/cse/lac/unit-1/a.pdf");
+});
 
 
 
