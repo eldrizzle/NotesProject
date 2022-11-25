@@ -1505,7 +1505,7 @@ background: linear-gradient(180deg, #D4F2F4 0%, rgba(212, 242, 244, 0) 100%);
   width: 309px;
 height: 222.49px;
 /* border: 2px solid red; */
-
+/* webkit-border-radius:20px; */
 margin: 10px;
 background: url(image.png);
 background-color: #007bb6;
