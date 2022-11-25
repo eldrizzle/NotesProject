@@ -66,6 +66,10 @@ app.get('/mechanical', function(req, res, next) {
 });
 
 
+app.get('/cse-lac', function(req, res, next) {
+   res.render("stream/cse-lac");
+});
+
 
 
 
@@ -75,7 +79,22 @@ app.get('/cse/unit-1/pdf1', function(req, res, next) {
    res.render("public/pdfs/cse/lac/unit-1/a.pdf");
 });
 
+// ------------------Years-------------------------------------
+app.get("/first-year", function(req, res){
+   res.render("stream/first-year")
+})
 
+app.get("/second-year", function(req, res){
+   res.render("stream/second-year")
+})
+
+app.get("/third-year", function(req, res){
+   res.render("stream/third-year")
+})
+
+app.get("/fourth-year", function(req, res){
+   res.render("stream/fourth-year")
+})
 
 app.listen(3000 , function(){
     console.log("Server started at port no 3000");
