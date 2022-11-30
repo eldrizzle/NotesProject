@@ -79,7 +79,7 @@ const userSchema = new mongoose.Schema ({
 
 
 app.get("/", function(req, res){
-    res.render("main")
+    res.render("registration")
 })
 
 app.get("/auth/google",
@@ -95,12 +95,12 @@ app.get("/auth/google/main",
 
 
   app.get("/login", function(req, res){
-    res.render("main");
+    res.render("registration");
   });
 
 
   app.get("/register", function(req, res){
-    res.render("main");
+    res.render("registration");
   });
 
   app.get("/main", function(req, res){
@@ -252,6 +252,9 @@ app.get('/cse-ep', function(req, res, next) {
   res.render("stream/cse-ep");
 });
 
+app.get('/cse-dm', function(req, res, next) {
+  res.render("stream/cse-dm");
+});
 
 
 
