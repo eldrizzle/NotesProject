@@ -243,7 +243,7 @@ app.get('/mechanical', function(req, res, next) {
    res.render("stream/mechanical");
 });
 
-
+//-------------------- first year -------------------
 app.get('/cse-lac', function(req, res, next) {
    res.render("stream/cse-lac");
 });
@@ -252,8 +252,66 @@ app.get('/cse-ep', function(req, res, next) {
   res.render("stream/cse-ep");
 });
 
+app.get('/cse-beee', function(req, res, next) {
+  res.render("stream/cse-beee");
+});
+
+app.get('/cse-chm', function(req, res, next) {
+  res.render("stream/cse-chm");
+});
+
+app.get('/cse-eg', function(req, res, next) {
+  res.render("stream/cse-eg");
+});
+
+app.get('/cse-en', function(req, res, next) {
+  res.render("stream/cse-en");
+});
+
+app.get('/cse-pps', function(req, res, next) {
+  res.render("stream/cse-pps");
+});
+
+//--------------second year-----------------------
+
 app.get('/cse-dm', function(req, res, next) {
   res.render("stream/cse-dm");
+});
+
+app.get('/cse-ipc', function(req, res, next) {
+  res.render("stream/cse-ipc");
+});
+
+app.get('/cse-adsa', function(req, res, next) {
+  res.render("stream/cse-adsa");
+});
+
+app.get('/cse-ds', function(req, res, next) {
+  res.render("stream/cse-ds");
+});
+
+app.get('/cse-comi', function(req, res, next) {
+  res.render("stream/cse-comi");
+});
+
+app.get('/cse-eco', function(req, res, next) {
+  res.render("stream/cse-eco");
+});
+
+app.get('/cse-ictt', function(req, res, next) {
+  res.render("stream/cse-ictt");
+});
+
+app.get('/cse-sepm', function(req, res, next) {
+  res.render("stream/cse-sepm");
+});
+
+app.get('/cse-dccn', function(req, res, next) {
+  res.render("stream/cse-dccn");
+});
+
+app.get('/cse-toc', function(req, res, next) {
+  res.render("stream/cse-toc");
 });
 
 
