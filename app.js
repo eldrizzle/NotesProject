@@ -17,6 +17,14 @@ app.get("/", function(req, res){
     res.render("main")
 })
 
+app.get('/digital', function(req, res, next) {
+   res.render("courses/digital");
+});
+
+app.get('/photography', function(req, res, next) {
+   res.render("courses/photography");
+});
+
 app.get('/web', function(req, res, next) {
     res.render("courses/web");
  });
