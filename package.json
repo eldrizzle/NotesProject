@@ -33,13 +33,9 @@
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-local-mongoose": "^7.1.2",
-<<<<<<< HEAD
     "path": "^0.12.7",
     "pdf-parse": "^1.1.1",
     "router": "^1.3.7",
-=======
-    "pdf-parse": "^1.1.1",
->>>>>>> 446fcdf33ad44f48e6cbfff2097bc7865981b24c
     "socket.io": "^4.5.4"
   }
 }

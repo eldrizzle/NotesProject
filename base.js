@@ -133,7 +133,7 @@ app.get('/mit-quora',function(req,res){
 
 
 
-app.get("/home", function(req, res){
+app.get("/", function(req, res){
     res.render("main")
 })
 
