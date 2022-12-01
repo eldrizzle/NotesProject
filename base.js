@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require("express");
 const jsdom = require("jsdom");
 const JSDOM = jsdom.JSDOM;
+const port = process.env.PORT || 4000
 
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -14,7 +15,7 @@ const findOrCreate = require('mongoose-findorcreate');
 
 const app = express();
 // const port = process.env.PORT || 3000
-
+// app.use(express.staticProvider(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -40,10 +41,58 @@ const userSchema = new mongoose.Schema ({
    secret: String
  });
 
+const Schema = mongoose.Schema
+
+const commentSchema = new Schema({
+    username: { type: String, required: true },
+    comment: { type: String, require: true }
+}, { timestamps: true })
+
  userSchema.plugin(passportLocalMongoose);
  userSchema.plugin(findOrCreate);
  
  const User = new mongoose.model("User", userSchema);
+ const Comment = mongoose.model('Comment', commentSchema)
+
+ app.use(express.json())
+
+// Routes 
+app.post('/api/comments', (req, res) => {
+    const comment = new Comment({
+        username: req.body.username,
+        comment: req.body.comment
+    })
+    comment.save().then(response => {
+        res.send(response)
+    })
+
+})
+
+app.get('/api/comments', (req, res) => {
+    Comment.find().then(function(comments) {
+        res.send(comments)
+    })
+})
+
+
+const server = app.listen(port, () => {
+  console.log(`Listening on port ${port}`)
+})
+
+let io = require('socket.io')(server)
+
+io.on('connection', (socket) => {
+    console.log(`New connection: ${socket.id}`)
+    // Recieve event
+    socket.on('comment', (data) => {
+        data.time = Date()
+        socket.broadcast.emit('comment', data)
+    })
+
+    socket.on('typing', (data) => {
+        socket.broadcast.emit('typing', data) 
+    })
+})
 
  passport.use(User.createStrategy());
  
@@ -74,13 +123,23 @@ const userSchema = new mongoose.Schema ({
 ));
 
 
+const path = require('path');
+const router = express.Router();
+app.set("public", path.join(__dirname, "public"));
+app.get('/mit-quora',function(req,res){
+  res.sendFile(path.join(__dirname+'/public/index.html'));
+  //__dirname : It will resolve to your project folder.
+});
 
 
 
-
-app.get("/", function(req, res){
-    res.render("registration")
+app.get("/home", function(req, res){
+    res.render("main")
 })
+
+// app.get("/mit-quora" , function(req ,res){
+//   res.render("public/index.html")
+// })
 
 app.get("/auth/google",
   passport.authenticate('google', { scope: ["profile"] })

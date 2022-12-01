@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realtime comment system</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/chatstyle.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h4><strong>Realtime comment system using NodeJs, Express, Mongo DB, Socket.io and vanila
+                        Javascript</strong></h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam enim, vitae cum error facere facilis
+                    aperiam delectus ducimus necessitatibus, at, rem explicabo nulla. Maxime tempore sunt ipsa fuga
+                    velit minus culpa laboriosam. Laborum architecto, natus reprehenderit consequatur maiores facilis,
+                    sunt laboriosam explicabo sit officiis accusamus sint eligendi debitis corrupti ad eaque nihil ullam
+                    omnis officia id dolorum? Alias, tempore possimus.</p>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <h4 class="border-bottom pb-2">Comments</h4>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="">Write a comment</label>
+                    <textarea id="textarea" rows="3" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button id="submitBtn" class="btn btn-primary float-right">Post comment</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="typing text-success"></div>
+                <ul class="comment__box">
+                    <!-- <li class="comment">
+                        <div class="card border-light mb-3">
+                            <div class="card-body">
+                                <h6>John Doe</h6>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur itaque,
+                                    exercitationem fuga sint enim non cupiditate deserunt soluta consequuntur
+                                    blanditiis!</p>
+                                <div>
+                                    <img src="/img/clock.png" alt="clock">
+                                    <small>11:30 PM</small>
+                                </div>
+                            </div>
+                        </div>
+                    </li> -->
+                    <!-- <li class="comment">
+                        <div class="card border-light mb-3">
+                            <div class="card-body">
+                                <h6>John Doe</h6>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur itaque,
+                                    exercitationem fuga sint enim non cupiditate deserunt soluta consequuntur
+                                    blanditiis!</p>
+                                <div>
+                                    <img src="/img/clock.png" alt="clock">
+                                    <small>11:30 PM</small>
+                                </div>
+                            </div>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- socket.io/socket.io.js -->
+    <script src="../node_modules/socket.io/dist/socket.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/moment.min.js"></script>
+    <script >
+        // prompt('enter your name')
+    let username 
+        let socket = io()
+        do {
+            username = prompt('Enter your name: ')
+        } while(!username)
+        
+        const textarea = document.querySelector('#textarea')
+        const submitBtn = document.querySelector('#submitBtn')
+        const commentBox = document.querySelector('.comment__box')
+        
+        submitBtn.addEventListener('click', (e) => {
+            e.preventDefault()
+            let comment = textarea.value
+            if(!comment) {
+                return
+            }
+            postComment(comment)
+        })
+        
+        function postComment(comment) {
+            // Append to dom
+            let data = {
+                username: username,
+                comment: comment
+            }
+            appendToDom(data)
+            textarea.value = ''
+            // Broadcast
+            broadcastComment(data)
+            // Sync with Mongo Db
+            syncWithDb(data)
+        
+        }
+        
+        function appendToDom(data) {
+            let lTag = document.createElement('li')
+            lTag.classList.add('comment', 'mb-3')
+        
+            let markup = `
+                                <div class="card border-light mb-3">
+                                    <div class="card-body">
+                                        <h6>${data.username}</h6>
+                                        <p>${data.comment}</p>
+                                        <div>
+                                            <img src="/img/clock.png" alt="clock">
+                                            <small>${moment(data.time).format('LT')}</small>
+                                        </div>
+                                        <div>
+                        <button id="submitBtn" class="btn btn-primary float-right">Reply</button>
+        
+                                        </div>
+                                    </div>
+                                </div>
+            `
+            lTag.innerHTML = markup
+        
+            commentBox.prepend(lTag)
+        }
+        
+        function broadcastComment(data) {
+            // Socket
+            socket.emit('comment', data)
+        }
+        
+        socket.on('comment', (data) => {
+            appendToDom(data)
+        })
+        let timerId = null
+        function debounce(func, timer) {
+            if(timerId) {
+                clearTimeout(timerId)
+            }
+            timerId = setTimeout(() => {
+                func()
+            }, timer)
+        }
+        let typingDiv = document.querySelector('.typing')
+        socket.on('typing', (data) => {
+            typingDiv.innerText = `${data.username} is typing...`
+            debounce(function() {
+                typingDiv.innerText = ''
+            }, 1000)
+        })
+        
+        // Event listner on textarea
+        textarea.addEventListener('keyup', (e) => {
+            socket.emit('typing', { username })
+        })
+        
+        // Api calls 
+        
+        function syncWithDb(data) {
+            const headers = {
+                'Content-Type': 'application/json'
+            }
+            fetch('/api/comments', { method: 'Post', body:  JSON.stringify(data), headers})
+                .then(response => response.json())
+                .then(result => {
+                    console.log(result)
+                })
+        }
+        
+        function fetchComments () {
+            fetch('/api/comments')
+                .then(res => res.json())
+                .then(result => {
+                    result.forEach((comment) => {
+                        comment.time = comment.createdAt
+                        appendToDom(comment)
+                    })
+                })
+        }
+        
+        window.onload = fetchComments</script>
+</body>
+
+</html>
